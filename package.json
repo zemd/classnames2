@@ -1,0 +1,69 @@
+{
+  "name": "classnames2",
+  "version": "2.2.5-beta.1",
+  "description": "A fork of utility for conditionally joining classNames together",
+  "main": "index.js",
+  "author": "Jed Watson",
+  "contributors": [
+    "Dmitry Zelenetskiy <dmitry.zelenetskiy@gmail.com>"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zemd/classnames2.git"
+  },
+  "scripts": {
+    "benchmarks": "node ./benchmarks/run",
+    "benchmarks-browserify": "./node_modules/.bin/browserify ./benchmarks/runInBrowser.js >./benchmarks/runInBrowser.bundle.js",
+    "benchmarks-in-browser": "./node_modules/.bin/opn ./benchmarks/benchmarks.html",
+    "test": "NODE_ENV=test ava --verbose",
+    "es5-umd": "rollem -c rollup.config.browser.es5.js",
+    "es5-commonjs": "rollem -c rollup.config.cjs.es5.js",
+    "es6-commonjs": "rollem -c rollup.config.cjs.es6.js",
+    "build": "npm run es5-umd && npm run es5-commonjs && npm run es6-commonjs"
+  },
+  "keywords": [
+    "react",
+    "css",
+    "classes",
+    "classname",
+    "classnames",
+    "util",
+    "utility"
+  ],
+  "devDependencies": {
+    "benchmark": "^1.0.0",
+    "browserify": "^14.1.0",
+    "ava": "^0.19.1",
+    "opn-cli": "^3.1.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-es2015": "^6.24.1",
+    "rollem": "^1.12.0",
+    "rollup": "^0.42.0",
+    "rollup-plugin-babel": "^2.7.1",
+    "rollup-plugin-commonjs": "^8.0.2",
+    "rollup-plugin-node-resolve": "^3.0.0"
+  },
+  "ava": {
+    "concurrency": 10,
+    "files": [
+      "test/**/*.js"
+    ],
+    "sources": [
+      "index.js",
+      "dedupe.js"
+    ],
+    "require": [
+      "babel-register"
+    ]
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "presets": [
+          "@ava/stage-4"
+        ]    
+      }
+    }
+  }
+}
