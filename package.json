@@ -33,7 +33,7 @@
     "utility"
   ],
   "devDependencies": {
-    "benchmark": "^1.0.0",
+    "benchmark": "^2.1.4",
     "browserify": "^14.1.0",
     "ava": "^0.19.1",
     "opn-cli": "^3.1.0",
