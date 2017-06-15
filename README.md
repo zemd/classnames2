@@ -1,5 +1,7 @@
 # Classnames2
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/zemd/classnames2.svg)](https://greenkeeper.io/)
+
 > This is a fork of `classnames` package with es6 exports and other stuff. 
 
 Versions of this package should be remained the same as original `classnames`.
