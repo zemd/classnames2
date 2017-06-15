@@ -1,16 +1,18 @@
-var fixtures = require('./fixtures');
-var local = require('../');
-var dedupe = require('../dedupe');
-var localPackage = require('../package.json');
+'use strict';
+
+const fixtures = require('./fixtures');
+const local = require('../es6/common/index');
+const dedupe = require('../es6/common/dedupe');
+const localPackage = require('../package.json');
 
 function log (message) {
 	console.log(message);
 }
 
 try {
-	var npm = require('classnames');
-	var npmDedupe = require('classnames/dedupe');
-	var npmPackage = require('./node_modules/classnames/package.json');
+	const npm = require('classnames2');
+	const npmDedupe = require('classnames2/es6/common/dedupe');
+	const npmPackage = require('./node_modules/classnames2/package.json');
 } catch (e) {
 	log('There was an error loading the benchmark classnames package.\n' +
 		'Please make sure you have run `npm install` in ./benchmarks\n');
@@ -24,8 +26,8 @@ if (localPackage.version !== npmPackage.version) {
 	process.exit(0);
 }
 
-var runChecks = require('./runChecks');
-var runSuite = require('./runSuite');
+const runChecks = require('./runChecks');
+const runSuite = require('./runSuite');
 
 fixtures.forEach(function (f) {
 	runChecks(local, npm, dedupe, npmDedupe, f);

@@ -1,3 +1,5 @@
+'use strict';
+
 var benchmark = require('benchmark');
 
 function runSuite (local, npm, dedupe, npmDedupe, fixture, log) {

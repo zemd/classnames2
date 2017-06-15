@@ -1,11 +1,13 @@
+'use strict';
+
 var fixtures = require('./fixtures');
-var local = require('../');
-var dedupe = require('../dedupe');
+var local = require('../es5/umd/index');
+var dedupe = require('../es5/umd/dedupe');
 var localPackage = require('../package.json');
 
-var npm = require('classnames');
-var npmDedupe = require('classnames/dedupe');
-var npmPackage = require('./node_modules/classnames/package.json');
+var npm = require('classnames2');
+var npmDedupe = require('classnames2/es5/umd/dedupe');
+var npmPackage = require('./node_modules/classnames2/package.json');
 
 function log (message) {
 	console.log(message);

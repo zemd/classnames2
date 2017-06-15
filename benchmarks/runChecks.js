@@ -1,4 +1,6 @@
-var assert = require('assert');
+'use strict';
+
+const assert = require('assert');
 
 function sortClasses (str) {
 	return str.split(' ').sort().join(' ');
