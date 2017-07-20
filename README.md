@@ -41,8 +41,8 @@ classNames('foo', 'bar'); // => 'foo bar'
 ### CommonJS
 
 ```js
-const classNames = require('classnames2/es6/common');
-// or
+const classNames = require('classnames2');
+// or for old nodejs versions
 const classNames = require('classnames2/es5/common');
 ```
 
